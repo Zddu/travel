@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" ref="MySwiper">
+    <swiper v-if="showSwiper" :options="swiperOption" ref="MySwiper">
       <swiper-slide :key="item.id" v-for="item in swiperList">
         <img class="swiper-img"
              :src="item.imgUrl" >
@@ -13,21 +13,22 @@
 <script>
   export default {
     name: "MySwiper",
+    props:{
+      swiperList:{
+        type:Array
+      }
+    },
+    computed:{
+      showSwiper(){
+        return this.swiperList.length
+      }
+    },
     data() {
       return {
         swiperOption: {
           pagination:'.swiper-pagination',
           loop:true,
         },
-        swiperList:[
-          {
-            id:'0001',
-            imgUrl:'http://zdde.kepu.wiki/upload/2021/04/1-a76de3171897438fb74e0210572b1dfa.png'
-          },{
-            id:'0002',
-            imgUrl:'http://zdde.kepu.wiki/upload/2021/04/2-08ef045f443845b9a050bfaa580a8c28.png'
-          }
-        ]
       }
     }
   }

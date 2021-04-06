@@ -17,38 +17,14 @@
 <script>
   export default {
     name: "Recommend",
+    props:{
+      recommendList:{
+        type:Array
+      }
+    },
     data(){
       return{
-        recommendList:[
-          {
-            id:'0001',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_256x160_c7b5500c.jpg',
-            title:'白石山世界地质公园',
-            desc:'壮观悬空玻璃道，抗日少年英雄山,抗日少年英雄山'
-          },
-          {
-            id:'0002',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_256x160_c7b5500c.jpg',
-            title:'白石山世界地质公园',
-            desc:'壮观悬空玻璃道，抗日少年英雄山,抗日少年英雄山'
-          },
-          {
-            id:'0003',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_256x160_c7b5500c.jpg',
-            title:'白石山世界地质公园',
-            desc:'壮观悬空玻璃道，抗日少年英雄山,抗日少年英雄山'
-          },{
-            id:'0004',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1805/35/35d8ce88ca9b2488a3.water.jpg_256x160_1218274a.jpg',
-            title:'山海关老龙头景区',
-            desc:'人类历史上的千古奇观'
-          },{
-            id:'0005',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/2005/f7/f79dd4ead02ab9f5a3.water.jpg_256x160_10a2bfea.jpg',
-            title:'秦皇岛野生动物园',
-            desc:'近距离感受自然与动物的和谐美'
-          },
-        ],
+
       }
     }
   }
