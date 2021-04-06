@@ -12,128 +12,16 @@
       <div class="area">
         <div class="title border-top-bottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
+          <div class="button-wrapper" :key="item.id" v-for="item in hotCities">
+            <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border-top-bottom">A</div>
+      <div class="area" :key="key" v-for="(item,key) in cities">
+        <div class="title border-top-bottom">{{key}}</div>
         <ul class="item-list">
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-        </ul>
-        <ul class="item-list">
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-        </ul>
-        <ul class="item-list">
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-        </ul>
-      </div>
-      <div class="area">
-        <div class="title border-top-bottom">A</div>
-        <ul class="item-list">
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-        </ul>
-        <ul class="item-list">
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-        </ul>
-        <ul class="item-list">
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
-          </li>
-          <li class="item border-bottom">
-            阿拉尔
+          <li class="item border-bottom" :key="innerItem.id" v-for="innerItem in item">
+            {{innerItem.name}}
           </li>
         </ul>
       </div>
@@ -145,6 +33,14 @@
   import Bscroll from 'better-scroll'
   export default {
     name: "ListView",
+    props:{
+      cities:{
+        type:Object
+      },
+      hotCities:{
+        type: Array
+      }
+    },
     mounted() {
       this.scroll = new Bscroll(this.$refs.wrapper)
     }
