@@ -1,26 +1,30 @@
 <template>
-    <div class="header">
-      <div class="header-left">
-        <span class="iconfont back-icon" >&#xe624;</span>
-      </div>
-      <div class="header-input">
-        <span class="iconfont">&#xe632;</span>
-        输入城市/景点/主题
-      </div>
+  <div class="header">
+    <div class="header-left">
+      <span class="iconfont back-icon">&#xe624;</span>
+    </div>
+    <div class="header-input">
+      <span class="iconfont">&#xe632;</span>
+      输入城市/景点/主题
+    </div>
+    <router-link to="/city">
       <div class="header-right">
         {{this.city}}
-        <span class="iconfont arrow-icon" >&#xe64a;</span>
+        <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
-    </div>
+    </router-link>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "Header",
-      props:{
-          city:String
+  export default {
+    name: "Header",
+    props: {
+      city: {
+        type:String
       }
     }
+  }
 </script>
 
 <style scoped lang="stylus">
@@ -30,9 +34,11 @@
     line-height .86rem
     height .86rem
     background-color $bgColor
+
     .header-left
       width .64rem
       float left
+
       .back-icon
         text-align center
         font-size .4rem
@@ -46,11 +52,13 @@
       background #ffffff
       border-radius .1rem
       color #ccc
+
     .header-right
       width 1.04rem
       float right
       text-align center
       color #ffffff
+
       .arrow-icon
         margin-left -.04rem
         font-size .24rem

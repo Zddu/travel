@@ -9,11 +9,11 @@
 </template>
 
 <script>
-  import HomeHeader from "@/components/header/Header";
-  import HomeSwiper from '@/components/swiper/MySwiper'
-  import HomeIcons from "@/components/Icons/Icons";
-  import HomeRecommend from "@/components/recommend/Recommend";
-  import HomeWeekend from "@/components/weekend/Weekend";
+  import HomeHeader from "@/components/home/header/Header";
+  import HomeSwiper from '@/components/home/swiper/MySwiper'
+  import HomeIcons from "@/components/home/Icons/Icons";
+  import HomeRecommend from "@/components/home/recommend/Recommend";
+  import HomeWeekend from "@/components/home/weekend/Weekend";
   import axios from 'axios'
 
   export default {
@@ -37,7 +37,6 @@
           res = res.data;
           if (res.ret && res.data) {
             const data = res.data;
-            this.city = data.city;
             this.swiperList = data.swiperList;
             this.iconList = data.iconList;
             this.recommendList = data.recommendList;
