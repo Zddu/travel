@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <!--优化路由性能-->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
 <style>
