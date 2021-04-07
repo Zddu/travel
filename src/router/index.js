@@ -20,5 +20,9 @@ export default new Router({
       name:'Detail',
       component:Detail
     }
-  ]
+  ],
+  //解决路由跳转后，页面位置异常情况
+  scrollBehavior(to,from,savedPosition){
+    return{x:0,y:0}
+  }
 })
