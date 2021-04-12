@@ -1,21 +1,23 @@
 # travel
 
-> 去哪儿网
+> 手机端旅游网开发实战
 
-## Build Setup
-
-``` bash
-# install dependencies
+## 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+## 运行项目
 npm run dev
 
-# build for production with minification
+## 打包项目
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 项目介绍
+  模仿手机端旅游网站，实现了首屏页面的搭建、城市搜索、按首字母搜索、本地信息存储、
+  景点详情、递归组件、swiper轮播封装
+## 功能实现
+![首屏展示页面]()
+![城市搜索页面]()
+![模糊搜索效果]()
+![模糊搜索效果]()
+![swiper查看图片详情]()
+![字母搜索手指滑动效果]()
